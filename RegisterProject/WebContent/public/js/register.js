@@ -6,7 +6,7 @@ function registro() {
 	
 	Email = document.getElementById("Email").value;
 	ConfEmail = document.getElementById("ConfEmail").value;
-	Password = document.getElementById("Password").value;
+	Password = document.getElementById("Password").value;	
 	ConfPassword = document.getElementById("ConfPassword").value;
 	
 	if(Email != ConfEmail){

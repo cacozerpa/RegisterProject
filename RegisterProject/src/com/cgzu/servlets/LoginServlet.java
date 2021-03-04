@@ -1,7 +1,6 @@
 package com.cgzu.servlets;
 
 import java.io.IOException;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -9,46 +8,51 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cgzu.controllers.RegisterController;
+import javax.servlet.http.HttpSession;
 
+import com.cgzu.controllers.LoginController;
 
 /**
- * Servlet implementation class register
+ * Servlet implementation class LoginServlet
  */
+@WebServlet("/login")
 @MultipartConfig()
-@WebServlet("/register")
-public class RegisterServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public RegisterServlet() {
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String name = request.getParameter("name");
 		String User = request.getParameter("User");
-		String Email = request.getParameter("Email");
-		String ConfEmail = request.getParameter("ConfEmail");
 		String Password = request.getParameter("Password");
-		String ConfPassword = request.getParameter("ConfPassword");
-		String Tlf = request.getParameter("Tlf");
 		
 		
-		String registered = RegisterController.register(name, User, Email, ConfEmail, Password, ConfPassword, Tlf);
-		if (registered.equals("registered")) {
-			
+		String loggin = LoginController.login(User, Password);
+		
+		HttpSession session = request.getSession();
+		
+		if(loggin.equals("Logged!")) {
+			System.out.println("Loggeado");
+			session.setAttribute("User", User);
+		
 			response.setStatus(200);
 			response.sendRedirect("http://localhost:8080/RegisterProject/user.html");
 			return;
-			
+
 		}else {
 			response.setStatus(500);
 		}
+		
+		
+	
 	}
 
 }
