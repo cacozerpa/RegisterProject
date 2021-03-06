@@ -15,9 +15,9 @@ public class DataBase {
 			Class.forName(pr.getValue("Driver"));
 			con= DriverManager.getConnection(pr.getValue("URL"),pr.getValue("User"),pr.getValue("Password"));
 		
-			System.out.print(pr.getValue("URL"));
-			System.out.print(pr.getValue("User"));
-			System.out.print(pr.getValue("Password"));
+			pr.getValue("URL");
+			pr.getValue("User");
+			pr.getValue("Password");
 			if (con != null) {
 				System.out.println("Conexion establecida!");
 			}else {

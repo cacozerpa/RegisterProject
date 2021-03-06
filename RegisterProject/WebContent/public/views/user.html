@@ -2,9 +2,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Loggeado</title>
+<title>User Profile</title>
+<link rel="stylesheet" href="../styles/user.css">
+
 </head>
 <body>
-	<h1>loggeado</h1>
+	<section class="Profile">
+		<form id="Profile">
+			<h4>Tu perfil</h4>
+
+			<input class="inputs" type="text" name="name" id="name" disabled> 
+				
+			<input class="inputs" type="text" name="User" id="User" disabled>
+			
+			<input class="inputs" type="email" name="Email" id="Email"  disabled> 
+					
+			<input class="inputs" type="password" name="Password" id="Password" disabled>
+			
+			<input class="inputs" type="text" name="ConfEmail" id="ConfEmail" disabled> 
+			
+			<input class="inputs" type="text" name="ConfPassword" id="ConfPassword" disabled> 
+			
+			<input class="inputs" type="text" name="Tlf" id="Tlf" disabled>
+			
+			<button class="button" id="Update">Actualizar</button>
+			
+			<button class="button" id="Logout">Logout</button>
+					
+			<button class="button" id="Delete">Eliminar</button>
+
+		</form>
+	</section>
+	<script src = "../js/user.js"></script>
+	<script src = "../js/logout.js"></script>
 </body>
 </html>

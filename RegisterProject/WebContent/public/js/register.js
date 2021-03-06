@@ -1,7 +1,10 @@
+
 var registerButton = document.getElementById("Register")
 
-function registro() {
+function registro(event) {
 
+	event.preventDefault();
+	
 	var Email, ConfEmail, Password, ConfPassword
 	
 	Email = document.getElementById("Email").value;
@@ -24,6 +27,11 @@ function registro() {
         method: 'POST',
         body: formData
    }).then(response => {
+	   if(response.status == 200){
+		   window.location.href = "http://localhost:8080/RegisterProject/public/views/login.html";
+	   }else{
+		   window.alert("Error en el registro de usuario!");
+	   }
 	   console.log(response);
     	return response.text()
         

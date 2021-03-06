@@ -1,6 +1,7 @@
 package com.cgzu.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -42,13 +43,11 @@ public class LoginServlet extends HttpServlet {
 		if(loggin.equals("Logged!")) {
 			System.out.println("Loggeado");
 			session.setAttribute("User", User);
-		
 			response.setStatus(200);
-			response.sendRedirect("http://localhost:8080/RegisterProject/user.html");
-			return;
+					
 
 		}else {
-			response.setStatus(500);
+			response.setStatus(400);
 		}
 		
 		

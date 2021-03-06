@@ -42,9 +42,8 @@ public class RegisterServlet extends HttpServlet {
 		String registered = RegisterController.register(name, User, Email, ConfEmail, Password, ConfPassword, Tlf);
 		if (registered.equals("registered")) {
 			
+			System.out.print("Register Completed!");
 			response.setStatus(200);
-			response.sendRedirect("http://localhost:8080/RegisterProject/user.html");
-			return;
 			
 		}else {
 			response.setStatus(500);

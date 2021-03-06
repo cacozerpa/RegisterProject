@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bienvenid@</title>
+<link rel="stylesheet" href="../styles/Welcome.css">
+</head>
+<body>
+	<div class= "welcome-box">
+	
+	<h1> Bienvenid@! </h1>
+	
+			<button class="btn" id="Info">Mostrar Información</button>
+			
+		</div>
+		
+		<script >
+
+		var infoButton = document.getElementById("Info");
+
+		function user(event){
+			
+			event.preventDefault();
+				window.location.href = "http://localhost:8080/RegisterProject/public/views/user.html"	
+
+		}
+
+		infoButton.onclick = user;
+
+		</script>
+</body>
+</html>
