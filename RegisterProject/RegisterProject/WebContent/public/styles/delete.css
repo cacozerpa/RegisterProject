@@ -1,0 +1,62 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: calibri;
+	background: darkblue;
+	
+}
+
+.delete-box{
+	width: 280px;
+	height: 480px;
+	position: absolute;
+	padding: 25px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: white;
+	background: #24303c;
+	border-radius: 4px;
+	box-shadow: 7px 13px 37px #000;
+}
+
+.delete-box h1 {
+	float: left;
+	font-size: 40px;
+	border-bottom: 6px solid #1f53c5;
+	margin-bottom: 50px;
+	padding: 13px 0;
+}
+
+.textbox{
+	width: 100%;
+	overflow: hidden;
+	font-size: 20px;
+	padding:8px 0;
+	margin: 8px 0;
+	border-bottom: 1px solid #1f53c5;	
+}
+
+.textbox input{
+	border: none;
+	outline: none;
+	background: none;
+	color: white;
+	font-family: calibri;
+	font-size: 18px;
+	width: 80%;
+	float: left;
+	margin: 0 10px;
+}
+
+.btn{
+	width: 100%;
+	background: #1f53c5;
+	border: none;
+	color: white;
+	padding: 12px;
+	font-size: 16px;
+	cursor: pointer;
+	margin: 16px 0;
+	
+}
