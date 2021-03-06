@@ -1,7 +1,11 @@
 package com.cgzu.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,6 +16,7 @@ import com.cgzu.controllers.UserController;
 /**
  * Servlet implementation class UserServlet
  */
+@MultipartConfig()
 @WebServlet("/user")
 public class UserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -29,18 +34,28 @@ public class UserServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
-		String sn = (String) session.getAttribute("User");
+		HttpSession session = request.getSession(true);
+		session.getAttribute("User");
 		
-		String user = UserController.showUser(sn);
+		UserController user = new UserController();
 		
-		if(user != null) {
-			response.setStatus(200);
-			System.out.print("Showing User");
-		}else {
-			response.setStatus(400);
-			System.out.print("Not Showing");
-		}
+		List<String> lista = user.showUser("User");
+		
+		PrintWriter writer = response.getWriter();
+		writer.print(lista);
+		writer.flush();
+		
+		response.setStatus(200);
+		
+		
+		
+	//	if(user != null) {
+	//		response.setStatus(200);
+	//		System.out.print("Showing User");
+	//	}else {
+	//		response.setStatus(400);
+	//		System.out.print("Not Showing");
+	//	}
 		
 		
 	}

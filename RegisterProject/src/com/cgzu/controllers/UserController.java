@@ -15,7 +15,7 @@ public class UserController {
 	
 	private static PropertyReader pr = PropertyReader.getInstance();
 	
-	public static String showUser(String User) {
+	public List<String> showUser(String User) {
 		
 		String response = ""; 
 		Connection con = DataBase.getConnection();
@@ -48,18 +48,20 @@ public class UserController {
 			
 			System.out.print(lista);
 			
+			
 			if(rs.next()){
 				response = usuario;
 				System.out.print(response);
 			}else {
 				System.out.print("Error");
 			}
+			return lista;
 			
 		}catch(SQLException e) {
 			e.printStackTrace();
 			System.out.print("Error");
 		}
-		return query;
+		return null;
 	}
 	
 	
