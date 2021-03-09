@@ -32,24 +32,26 @@ public class UserServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    String ss = null;
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession(true);
-		session.getAttribute("User");
+		String ss = (String) session.getAttribute("User");
 		
 		UserController user = new UserController();
 		
-		List<String> lista = user.showUser("User");
+		List<String> lista = user.showUser(ss);
+		
 		
 		PrintWriter writer = response.getWriter();
 		writer.print(lista);
 		writer.flush();
+
+		response.setStatus(200);	
 		
-		response.setStatus(200);
-		
-		
-		
-	//	if(user != null) {
+	//	if(ss != null) {
 	//		response.setStatus(200);
 	//		System.out.print("Showing User");
 	//	}else {

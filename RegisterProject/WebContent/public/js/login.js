@@ -12,7 +12,7 @@ function login(event){
 		body: formData
 		}).then(response => {
 			if(response.status == 200){
-				window.location.href = "http://localhost:8080/RegisterProject/public/views/welcome.html"
+				window.location.href = "http://localhost:8080/RegisterProject/public/views/user.html"
 			}else{
 				window.alert("Login Fallido!");
 			}

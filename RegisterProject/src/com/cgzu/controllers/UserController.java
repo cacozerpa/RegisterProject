@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import org.json.JSONObject;
 
 
 import com.cgzu.helpers.DataBase;
@@ -17,17 +18,20 @@ public class UserController {
 	
 	public List<String> showUser(String User) {
 		
+		JSONObject json = new JSONObject();
 		String response = ""; 
 		Connection con = DataBase.getConnection();
-		String query = pr.getValue("registerUser");	
+		String query = pr.getValue("getUser");	
 		List<String> lista = new ArrayList<String>();
 		
 		try {
 			
+		
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setString(1, User);
 			ResultSet rs = ps.executeQuery();
 			
+			if(rs.next()){
 			String name = rs.getString("name");
 			String usuario = rs.getString("usuario");
 			String email = rs.getString("email");
@@ -37,21 +41,21 @@ public class UserController {
 			String ci = rs.getString("ci");
 			String apodo = rs.getString("apodo");
 			
-			lista.add(name);
-			lista.add(usuario);
-			lista.add(email);
-			lista.add(password);
-			lista.add(tlf);
-			lista.add(direccion);
-			lista.add(ci);
-			lista.add(apodo);
+			json.put("name", name);
+			json.put("usuario", usuario);
+			json.put("email", email);
+			json.put("email", email);
+			json.put("password", password);
+			json.put("tlf", tlf);
+			json.put("direccion", direccion);
+			json.put("ci", ci);
+			json.put("apodo", apodo);
 			
-			System.out.print(lista);
+			lista.add(json.toString());
 			
-			
-			if(rs.next()){
 				response = usuario;
 				System.out.print(response);
+				
 			}else {
 				System.out.print("Error");
 			}
