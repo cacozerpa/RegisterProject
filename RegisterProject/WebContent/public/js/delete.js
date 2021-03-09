@@ -7,13 +7,13 @@ function delte(event){
 	
 	var formData = new FormData(document.getElementById("deleteForm"))
 	
-	fetch("http://localhost:8080/RegisterProject/delete", {
+	fetch("https://registerprojectcarloszerpa.herokuapp.com/delete", {
 		
 		method: 'POST',
 		body: formData
 		}).then(response => {
 			if(response.status == 200){
-				window.location.href = "http://localhost:8080/RegisterProject/index.html"
+				window.location.href = "https://registerprojectcarloszerpa.herokuapp.com/RegisterProject/index.html"
 			}else{
 				window.alert("Delete Fallido!");
 			}

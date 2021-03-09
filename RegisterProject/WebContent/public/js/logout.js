@@ -4,14 +4,14 @@ function logout(event){
 	
 	event.preventDefault();
 	
-	fetch("http://localhost:8080/RegisterProject/logout", {
+	fetch("https://registerprojectcarloszerpa.herokuapp.com/logout", {
 		
 		method: 'POST',
 		headers: new Headers()
 	
 	}).then(response => {
 		if(response.status == 200){
-			window.location.href = "http://localhost:8080/RegisterProject/index.html"
+			window.location.href = "https://registerprojectcarloszerpa.herokuapp.com/index.html"
 		}else{
 			window.alert("Logout Fallido!");
 		}

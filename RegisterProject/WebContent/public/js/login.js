@@ -6,13 +6,13 @@ function login(event){
 	
 	var formData = new FormData(document.getElementById("loginForm"))
 	
-		fetch("http://localhost:8080/RegisterProject/login", {
+		fetch("https://registerprojectcarloszerpa.herokuapp.com/login", {
 	
 		method: 'POST',
 		body: formData
 		}).then(response => {
 			if(response.status == 200){
-				window.location.href = "http://localhost:8080/RegisterProject/public/views/user.html"
+				window.location.href = "https://registerprojectcarloszerpa.herokuapp.com/public/views/user.html"
 			}else{
 				window.alert("Login Fallido!");
 			}

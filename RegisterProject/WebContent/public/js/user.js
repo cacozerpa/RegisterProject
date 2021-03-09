@@ -4,7 +4,7 @@ window.onload = function user(event){
 	event.preventDefault();
 	
 	
-	fetch("http://localhost:8080/RegisterProject/user").then(response => { return response.json(); }).then( data => {
+	fetch("https://registerprojectcarloszerpa.herokuapp.com/user").then(response => { return response.json(); }).then( data => {
 		
 		
 		document.getElementById("name").value = data[0].name;
