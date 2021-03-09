@@ -13,7 +13,7 @@ function delte(event){
 		body: formData
 		}).then(response => {
 			if(response.status == 200){
-				window.location.href = "https://registerprojectcarloszerpa.herokuapp.com/RegisterProject/index.html"
+				window.location.href = "https://registerprojectcarloszerpa.herokuapp.com/index.html"
 			}else{
 				window.alert("Delete Fallido!");
 			}
