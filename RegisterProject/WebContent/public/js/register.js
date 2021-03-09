@@ -23,12 +23,12 @@ function registro(event) {
 	
 	var formData = new FormData(document.getElementById("register-form"))
 	
-	fetch("http://localhost:8080/RegisterProject/register", {
+	fetch("https://registerprojectcarloszerpa.herokuapp.com/register", {
         method: 'POST',
         body: formData
    }).then(response => {
 	   if(response.status == 200){
-		   window.location.href = "http://localhost:8080/RegisterProject/public/views/login.html";
+		   window.location.href = "https://registerprojectcarloszerpa.herokuapp.com/public/views/login.html";
 	   }else{
 		   window.alert("Error en el registro de usuario!");
 	   }
