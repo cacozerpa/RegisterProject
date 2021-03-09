@@ -126,6 +126,11 @@
       <version>9.0.0.M10</version>
     </dependency>
     <dependency>
+      <groupId>org.json</groupId>
+      <artifactId>json</artifactId>
+      <version>20201115</version>
+    </dependency>
+    <dependency>
       <groupId>org.postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>42.2.12</version>
@@ -142,23 +147,6 @@
       </resource>
     </resources>
     <plugins>
-    <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <version>3.0.1</version>
-                <executions>
-                    <execution>
-                        <id>copy-dependencies</id>
-                        <phase>package</phase>
-                        <goals><goal>copy-dependencies</goal></goals>
-                    </execution>
-                </executions>
-            </plugin>
-     <plugin>
-        <groupId>com.heroku.sdk</groupId>
-        <artifactId>heroku-maven-plugin</artifactId>
-        <version>3.0.3</version>
-      </plugin>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.8.0</version>
@@ -174,6 +162,28 @@
           <warSourceDirectory>WebContent</warSourceDirectory>
         </configuration>
       </plugin>
+     <plugin>
+      		<groupId>org.apache.maven.plugins</groupId>
+      		<artifactId>maven-dependency-plugin</artifactId>
+      		<executions>
+      			<execution>
+      				<phase>package</phase>
+      				<goals>
+      					<goal>copy</goal>
+      				</goals>
+      				<configuration>
+      					<artifactItems>
+      						<artifactItem>
+      							<groupId>com.heroku</groupId>
+								<artifactId>webapp-runner</artifactId>
+								<version>9.0.30.0</version>
+								<destFileName>webapp-runner.jar</destFileName>
+      						</artifactItem>
+      					</artifactItems>
+      				</configuration>
+      			</execution>
+      		</executions>
+      	</plugin>
     </plugins>
   </build>
 </project>
