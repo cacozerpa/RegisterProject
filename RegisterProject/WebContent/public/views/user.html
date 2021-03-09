@@ -10,30 +10,57 @@
 	<section class="Profile">
 		<form id="Profile">
 			<h4>Tu perfil</h4>
-
+			
+			
+			<p>Nombre</p>
 			<input class="inputs" type="text" name="name" id="name" disabled> 
-				
+			<p>Usuario</p>
 			<input class="inputs" type="text" name="User" id="User" disabled>
-			
+			<p>Email</p>
 			<input class="inputs" type="email" name="Email" id="Email"  disabled> 
-					
+			<p>Constraseña</p>		
 			<input class="inputs" type="password" name="Password" id="Password" disabled>
-			
-			<input class="inputs" type="text" name="ConfEmail" id="ConfEmail" disabled> 
-			
-			<input class="inputs" type="text" name="ConfPassword" id="ConfPassword" disabled> 
-			
-			<input class="inputs" type="text" name="Tlf" id="Tlf" disabled>
-			
+			<p>Telefono</p>
+			<input class="inputs" type="text" name="Tlf" id="Tlf" disabled> 
+			<p>Direccion</p>
+			<input class="inputs" type="text" name="direccion" id="direccion" disabled> 
+			<p>Cedula de Identidad</p>
+			<input class="inputs" type="text" name="ci" id="ci" disabled>
+			<p>Apodo</p>
+			<input class="inputs" type="text" name="apodo" id="apodo" disabled>
+						
 			<button class="button" id="Update">Actualizar</button>
 			
 			<button class="button" id="Logout">Logout</button>
 					
-			<button class="button" id="Delete">Eliminar</button>
+			<button class="button" id="Eliminar">Eliminar</button>
 
 		</form>
 	</section>
-	<script src = "../js/user.js"></script>
-	<script src = "../js/logout.js"></script>
+	
+	<script>
+	var updateButton = document.getElementById("Update");
+
+	function update(event){
+		
+		event.preventDefault();
+		
+		window.location.href = "http://localhost:8080/RegisterProject/public/views/update.html"
+	}
+
+	updateButton.onclick = update;
+	</script>
+	
+	<script src = "../js/user.js"defer></script>
+	<script >var eliminarButton = document.getElementById("Eliminar")
+
+	function eliminar(e){
+		e.preventDefault();
+		
+		window.location.href = "http://localhost:8080/RegisterProject/public/views/delete.html"
+	}
+
+	eliminarButton.onclick = eliminar;</script>
+	<script src = "../js/logout.js" defer></script>
 </body>
 </html>

@@ -53,7 +53,7 @@ public class UserController {
 			
 			lista.add(json.toString());
 			
-				response = usuario;
+				response = "Showing";
 				System.out.print(response);
 				
 			}else {

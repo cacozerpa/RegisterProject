@@ -51,13 +51,13 @@ public class UserServlet extends HttpServlet {
 
 		response.setStatus(200);	
 		
-	//	if(ss != null) {
-	//		response.setStatus(200);
-	//		System.out.print("Showing User");
-	//	}else {
-	//		response.setStatus(400);
-	//		System.out.print("Not Showing");
-	//	}
+		if(ss != null) {
+			response.setStatus(200);
+			System.out.print("Showing User");
+			}else {
+				response.setStatus(400);
+			System.out.print("Not Showing");
+		}
 		
 		
 	}

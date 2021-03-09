@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Delete Done!</title>
+<link rel="stylesheet" href="../styles/deletedone.css">
+</head>
+<body>
+
+<div class= "delete-box">
+	
+	<h1> Usuario Eliminado! </h1>
+	
+			<button class="btn" id="Info">Volver</button>
+			
+		</div>
+		
+		<script>
+		var infoButton = document.getElementById("Info")
+		function user(event){
+		event.preventDefault();
+		window.location.href = "http://localhost:8080/RegisterProject/public/views/index.html";	
+		}
+		infoButton.onclick = user;
+		</script>
+
+</body>
+</html>

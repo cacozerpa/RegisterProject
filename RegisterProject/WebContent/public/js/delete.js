@@ -1,12 +1,3 @@
-var eliminarButton = document.getElementById("Eliminar")
-
-function eliminar(e){
-	e.preventDefault();
-	
-	window.location.href = "http://localhost:8080/RegisterProject/public/views/delete.html"
-}
-
-eliminarButton.onclick = eliminar;
 
 var deleteButton = document.getElementById("Delete")
 
